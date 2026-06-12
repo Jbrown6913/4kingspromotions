@@ -46,7 +46,7 @@ nav a:hover::after{width:100%}
 .lang-toggle button{font-family:var(--cond);font-size:12px;letter-spacing:.18em;text-transform:uppercase;background:transparent;border:none;color:var(--muted);padding:6px 14px;cursor:pointer;transition:all .3s}
 .lang-toggle button.active{background:var(--gold);color:var(--black);font-weight:600}
 
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 40px 90px;position:relative}
+.hero{min-height:calc(100vh - 132px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 40px 90px;position:relative}
 .hero .frame{display:flex;flex-direction:column;align-items:center;gap:34px}
 .hero .topline{opacity:0;animation:fade .9s ease forwards .2s}
 .hero img.logo{width:min(620px,85vw);height:auto;display:block;filter:drop-shadow(0 18px 60px rgba(213,152,35,.18));opacity:0;transform:translateY(14px) scale(.985);animation:rise 1.3s cubic-bezier(.16,.84,.34,1) forwards .35s}
@@ -170,7 +170,7 @@ footer .small a{color:var(--platinum);text-decoration:none}
 @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @property --ga{syntax:'<angle>';initial-value:0deg;inherits:false}
 @keyframes ringspin{to{--ga:360deg}}
-.ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;position:relative;z-index:2;background:rgba(10,9,8,.6)}
+.ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;position:relative;z-index:2;background:rgba(10,9,8,.6);margin-top:80px}
 .ticker .track{display:flex;width:max-content;animation:tick 38s linear infinite;gap:0}
 .ticker span{font-family:var(--display);font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(213,152,35,.55);white-space:nowrap;padding-right:18px}
 .ticker span b{color:var(--gold);-webkit-text-stroke:0;font-weight:400}
@@ -217,6 +217,7 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
 @keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
 
 @media(max-width:880px){
+  .ticker{margin-top:68px}
   nav ul{display:none}
   .nav-ctas{border-left:none;padding-left:0;margin-left:0;gap:14px}
   .wrap{padding:0 24px}
@@ -263,6 +264,10 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
   </div>
 </nav>
 
+<div class="ticker" aria-hidden="true"><div class="track" id="tickertrack">
+  <span>Noche de Gloria <b>·</b> September 26, 2026 <b>·</b> Palenque de la Feria de León <b>·</b> 18 Bouts <b>·</b> One Night <b>·</b>&nbsp;</span>
+</div></div>
+
 <header class="hero">
   <div class="frame">
     <div class="topline overline" data-i="hero_overline">The Bajío · Premium Boxing</div>
@@ -288,10 +293,6 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
   </div>
   <div class="scrollcue" data-i="scroll">Scroll<i></i></div>
 </header>
-
-<div class="ticker" aria-hidden="true"><div class="track" id="tickertrack">
-  <span>Noche de Gloria <b>·</b> September 26, 2026 <b>·</b> Palenque de la Feria de León <b>·</b> 18 Bouts <b>·</b> One Night <b>·</b>&nbsp;</span>
-</div></div>
 
 <main>
 
