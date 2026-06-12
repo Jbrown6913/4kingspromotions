@@ -62,6 +62,10 @@ nav a:hover::after{width:100%}
 .herocd .hu b{font-weight:400;color:var(--gold-bright)}
 .herocd .hu i{font-style:normal;font-family:var(--cond);font-size:13px;letter-spacing:.22em;color:var(--muted);margin-left:5px}
 .herocd .hl{font-family:var(--cond);text-transform:uppercase;letter-spacing:.4em;font-size:10.5px;color:var(--gold)}
+.heroreach{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;justify-content:center;text-decoration:none;opacity:0;animation:fade 1s ease forwards 1.35s;font-family:var(--cond);text-transform:uppercase;letter-spacing:.24em;font-size:11.5px;color:var(--muted);transition:color .3s}
+.heroreach b{font-family:var(--display);font-weight:400;font-size:19px;letter-spacing:.06em;color:var(--gold)}
+.heroreach:hover{color:var(--platinum)}
+.heroreach .sep{color:var(--line)}
 .scrollcue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-family:var(--cond);letter-spacing:.3em;font-size:10px;text-transform:uppercase;color:var(--muted);opacity:0;animation:fade 1s ease forwards 1.4s}
 .scrollcue i{display:block;width:1px;height:46px;margin:12px auto 0;background:linear-gradient(var(--gold),transparent);animation:pulse 2.4s ease-in-out infinite}
 
@@ -291,6 +295,12 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
       </div>
       <div class="hl" data-i="hcd_label">To Fight Night</div>
     </div>
+    <a class="heroreach" href="#broadcast">
+      <span data-i="hr_t">Broadcast</span><span class="sep">·</span>
+      <span><b>236M</b> MX</span><span class="sep">·</span>
+      <span><b>77M</b> US</span><span class="sep">·</span>
+      <span><b>285M</b> LATAM</span>
+    </a>
   </div>
   <div class="scrollcue" data-i="scroll">Scroll<i></i></div>
 </header>
@@ -523,7 +533,7 @@ es:{
   copro:"Presentado por Four Kings Promotions & Bajío Boxing Promotions",
   card_overline:"Cartelera",card_h2:"La cartelera.",
   main_event:"Pelea Estelar",
-  opponent_tba:"Cartelera Completa Próximamente",cd_title:"Anuncio de la Pelea Estelar · 4 de Julio",cd_d:"Días",cd_h:"Horas",cd_m:"Minutos",cd_s:"Segundos",cd_done:"La espera terminó. Anuncio en vivo.",hcd_label:"Para la Noche de Pelea",hcd_done:"Noche de Pelea.",me_name:"Por Anunciar",me_alias:"Un estelarista de calibre de campeonato mundial",me_detail:"Noche de Gloria · 26 de Septiembre",
+  opponent_tba:"Cartelera Completa Próximamente",cd_title:"Anuncio de la Pelea Estelar · 4 de Julio",cd_d:"Días",cd_h:"Horas",cd_m:"Minutos",cd_s:"Segundos",cd_done:"La espera terminó. Anuncio en vivo.",hcd_label:"Para la Noche de Pelea",hr_t:"Transmisión",hcd_done:"Noche de Pelea.",me_name:"Por Anunciar",me_alias:"Un estelarista de calibre de campeonato mundial",me_detail:"Noche de Gloria · 26 de Septiembre",
   tag_undefeated:"Prospecto Invicto",tag_champion:"Excampeona Mundial",
   rec_tba:"Récord TBA",rec_tba2:"Récord TBA",rec_tba3:"Récord TBA",rec_tba4:"Récord TBA",rec_tba5:"Récord TBA",
   stat_pro:"Peleas Profesionales",stat_am:"Peleas Amateur",stat_total:"Peleas Totales",
@@ -592,7 +602,7 @@ en:{
   copro:"Presented by Four Kings Promotions & Bajío Boxing Promotions",
   card_overline:"Fight Card",card_h2:"The card.",
   main_event:"Main Event",
-  opponent_tba:"Full Card Reveal Coming",cd_title:"Main Event Announcement · July 4",cd_d:"Days",cd_h:"Hours",cd_m:"Minutes",cd_s:"Seconds",cd_done:"The wait is over. Announcement live.",hcd_label:"To Fight Night",hcd_done:"Fight Night.",me_name:"To Be Announced",me_alias:"A world-championship calibre headliner",me_detail:"Noche de Gloria · September 26",
+  opponent_tba:"Full Card Reveal Coming",cd_title:"Main Event Announcement · July 4",cd_d:"Days",cd_h:"Hours",cd_m:"Minutes",cd_s:"Seconds",cd_done:"The wait is over. Announcement live.",hcd_label:"To Fight Night",hr_t:"Broadcast",hcd_done:"Fight Night.",me_name:"To Be Announced",me_alias:"A world-championship calibre headliner",me_detail:"Noche de Gloria · September 26",
   tag_undefeated:"Undefeated Prospect",tag_champion:"Former World Champion",
   rec_tba:"Record TBA",rec_tba2:"Record TBA",rec_tba3:"Record TBA",rec_tba4:"Record TBA",rec_tba5:"Record TBA",
   stat_pro:"Professional Bouts",stat_am:"Amateur Bouts",stat_total:"Total Fights",
