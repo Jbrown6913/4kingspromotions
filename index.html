@@ -162,7 +162,10 @@ footer .small a{color:var(--platinum);text-decoration:none}
 .ticker span{font-family:var(--display);font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(213,152,35,.55);white-space:nowrap;padding-right:18px}
 .ticker span b{color:var(--gold);-webkit-text-stroke:0;font-weight:400}
 .vip-exp{position:relative;padding:80px 60px;text-align:center;background:radial-gradient(130% 160% at 50% 0%,rgba(213,152,35,.10),transparent 62%);overflow:hidden}
-.vip-exp::before{content:"";position:absolute;inset:0;padding:1px;background:conic-gradient(from var(--ga),rgba(213,152,35,.05),rgba(240,199,98,.85),rgba(213,152,35,.05) 32%,rgba(213,152,35,.18));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:ringspin 9s linear infinite;pointer-events:none}
+.vip-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;filter:grayscale(.25) contrast(1.1) brightness(.68);z-index:0}
+.vip-veil{position:absolute;inset:0;background:radial-gradient(115% 95% at 50% 0%,rgba(10,9,8,.18),rgba(10,9,8,.88) 82%);z-index:0}
+.vip-exp>:not(.vip-video):not(.vip-veil){position:relative;z-index:2}
+.vip-exp::before{content:"";position:absolute;inset:0;z-index:3;padding:1px;background:conic-gradient(from var(--ga),rgba(213,152,35,.05),rgba(240,199,98,.85),rgba(213,152,35,.05) 32%,rgba(213,152,35,.18));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:ringspin 9s linear infinite;pointer-events:none}
 .vip-exp .crest{font-family:var(--display);font-size:15px;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
 .vip-exp h2{font-family:var(--display);font-weight:400;font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}
 .vip-exp .lead{font-style:italic;font-size:clamp(19px,2.2vw,24px);color:var(--platinum);max-width:54ch;margin:0 auto 14px}
@@ -187,7 +190,7 @@ footer .small a{color:var(--platinum);text-decoration:none}
 .platforms{margin-top:34px;text-align:center;font-family:var(--cond);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);line-height:2.1}
 .bcast-note{margin-top:18px;text-align:center;font-family:var(--cond);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(138,131,119,.6)}
 @media(max-width:880px){.bcast{grid-template-columns:1fr 1fr}}
-@media(prefers-reduced-motion:reduce){.gold-text,.ticker .track,.vip-exp::before,.tickets .t.vip::after{animation:none}}
+@media(prefers-reduced-motion:reduce){.gold-text,.ticker .track,.vip-exp::before,.tickets .t.vip::after{animation:none}.vip-video{display:none}}
 @keyframes rise{to{opacity:1;transform:none}}
 @keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
 
@@ -344,6 +347,9 @@ footer .small a{color:var(--platinum);text-decoration:none}
 
 <section id="vip" class="wrap">
   <div class="vip-exp reveal">
+    <!-- Gallo footage: Pexels free license, video 35442305 -->
+    <video class="vip-video" muted loop playsinline preload="none" poster="vip-gallo.jpg" aria-hidden="true"><source data-src="vip-gallo.mp4" type="video/mp4"></video>
+    <div class="vip-veil"></div>
     <div class="crest" data-i="vip_crest">Four Kings &middot; VIP</div>
     <h2 class="gold-text" data-i="vip_h2">The King&rsquo;s Circle</h2>
     <p class="lead" data-i="vip_lead">Forty seats at the apron of the ring. A private salon behind them. The closest thing to being in the corner &mdash; reserved for those who treat fight night as an occasion.</p>
@@ -604,6 +610,15 @@ const cio=new IntersectionObserver(es=>{es.forEach(e=>{
   requestAnimationFrame(step);
 })},{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+// vip gallo video: lazy load + play in view
+const vv=document.querySelector('.vip-video');
+if(vv&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const vio=new IntersectionObserver(es=>{es.forEach(e=>{
+    if(e.isIntersecting){const s=vv.querySelector('source');if(s&&!s.src){s.src=s.dataset.src;vv.load()}vv.play().catch(()=>{})}
+    else{vv.pause()}
+  })},{rootMargin:'300px'});
+  vio.observe(vv);
+}
 // hero parallax
 const hframe=document.querySelector('.hero .frame');
 if(matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
