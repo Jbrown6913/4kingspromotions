@@ -169,9 +169,16 @@ footer .small a{color:var(--platinum);text-decoration:none}
 .ticker span{font-family:var(--display);font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(213,152,35,.55);white-space:nowrap;padding-right:18px}
 .ticker span b{color:var(--gold);-webkit-text-stroke:0;font-weight:400}
 .vip-exp{position:relative;padding:80px 60px;text-align:center;background:radial-gradient(130% 160% at 50% 0%,rgba(213,152,35,.10),transparent 62%);overflow:hidden}
-.vip-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;filter:grayscale(.25) contrast(1.1) brightness(.68);z-index:0}
-.vip-veil{position:absolute;inset:0;background:radial-gradient(115% 95% at 50% 0%,rgba(10,9,8,.18),rgba(10,9,8,.88) 82%);z-index:0}
-.vip-exp>:not(.vip-video):not(.vip-veil){position:relative;z-index:2}
+.vip-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;filter:grayscale(.3) contrast(1.15) brightness(.55) saturate(.75);z-index:0}
+.vip-veil{position:absolute;inset:0;background:radial-gradient(95% 85% at 50% 38%,rgba(10,9,8,.15),rgba(10,9,8,.96) 88%),linear-gradient(90deg,rgba(10,9,8,.85),transparent 22%,transparent 78%,rgba(10,9,8,.85));z-index:0}
+.vip-exp>:not(.vip-video):not(.vip-veil):not(.vip-smoke){position:relative;z-index:2}
+.vip-smoke{position:absolute;inset:-25% -30%;z-index:1;pointer-events:none;filter:blur(42px)}
+.vip-smoke::before,.vip-smoke::after{content:"";position:absolute;inset:0;width:170%;
+background:radial-gradient(38% 30% at 18% 64%,rgba(216,210,198,.20),transparent 70%),radial-gradient(30% 24% at 52% 80%,rgba(190,182,168,.16),transparent 70%),radial-gradient(44% 34% at 80% 58%,rgba(216,210,198,.14),transparent 70%),radial-gradient(26% 20% at 36% 44%,rgba(190,182,168,.12),transparent 70%)}
+.vip-smoke::before{animation:smokeA 30s linear infinite}
+.vip-smoke::after{animation:smokeB 44s linear infinite;opacity:.7;transform:scaleY(-1)}
+@keyframes smokeA{0%{transform:translateX(-22%)}100%{transform:translateX(0%)}}
+@keyframes smokeB{0%{transform:scaleY(-1) translateX(0%)}100%{transform:scaleY(-1) translateX(-22%)}}
 .vip-exp::before{content:"";position:absolute;inset:0;z-index:3;padding:1px;background:conic-gradient(from var(--ga),rgba(213,152,35,.05),rgba(240,199,98,.85),rgba(213,152,35,.05) 32%,rgba(213,152,35,.18));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:ringspin 9s linear infinite;pointer-events:none}
 .vip-exp .crest{font-family:var(--display);font-size:15px;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
 .vip-exp h2{font-family:var(--display);font-weight:400;font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}
@@ -197,7 +204,7 @@ footer .small a{color:var(--platinum);text-decoration:none}
 .platforms{margin-top:34px;text-align:center;font-family:var(--cond);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);line-height:2.1}
 .bcast-note{margin-top:18px;text-align:center;font-family:var(--cond);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(138,131,119,.6)}
 @media(max-width:880px){.bcast{grid-template-columns:1fr 1fr}}
-@media(prefers-reduced-motion:reduce){.gold-text,.ticker .track,.vip-exp::before,.tickets .t.vip::after{animation:none}.vip-video{display:none}}
+@media(prefers-reduced-motion:reduce){.gold-text,.ticker .track,.vip-exp::before,.tickets .t.vip::after{animation:none}.vip-video{display:none}.vip-smoke::before,.vip-smoke::after{animation:none}}
 @keyframes rise{to{opacity:1;transform:none}}
 @keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
 
@@ -364,6 +371,7 @@ footer .small a{color:var(--platinum);text-decoration:none}
     <!-- Gallo footage: Pexels free license, video 35442305 -->
     <video class="vip-video" muted loop playsinline preload="none" poster="vip-gallo.jpg" aria-hidden="true"><source data-src="vip-gallo.mp4" type="video/mp4"></video>
     <div class="vip-veil"></div>
+    <div class="vip-smoke" aria-hidden="true"></div>
     <div class="crest" data-i="vip_crest">Four Kings &middot; VIP</div>
     <h2 class="gold-text" data-i="vip_h2">The King&rsquo;s Circle</h2>
     <p class="lead" data-i="vip_lead">Forty seats at the apron of the ring. A private salon behind them. The closest thing to being in the corner, reserved for those who treat fight night as an occasion.</p>
