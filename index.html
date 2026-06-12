@@ -85,6 +85,13 @@ section{padding:120px 0;position:relative}
 .main-event .fighter-name{font-family:var(--display);font-weight:400;font-size:clamp(42px,7vw,80px);line-height:1;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
 .main-event .fighter-alias{font-family:var(--body);font-style:italic;font-size:22px;color:var(--gold-bright);margin-bottom:8px}
 .main-event .fighter-detail{font-family:var(--cond);font-size:14px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+.cd-title{font-family:var(--cond);text-transform:uppercase;letter-spacing:.3em;font-size:12px;color:var(--gold);margin-top:30px}
+.cd{display:flex;gap:14px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.cd .u{border:1px solid var(--line);min-width:88px;padding:16px 10px 12px;background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(0,0,0,0))}
+.cd .u .v{font-family:var(--display);font-weight:400;font-size:46px;line-height:1;letter-spacing:.03em}
+.cd .u .k{font-family:var(--cond);text-transform:uppercase;letter-spacing:.26em;font-size:10px;color:var(--muted);margin-top:8px}
+.cd .u:last-child .v{color:var(--gold-bright)}
+@media(max-width:520px){.cd{gap:8px}.cd .u{min-width:72px}}
 .main-event .opponent-tba{font-family:var(--cond);font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:26px;padding-top:26px;border-top:1px solid var(--line)}
 .featured{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
 .featured .f{border:1px solid var(--line);padding:28px 24px;background:linear-gradient(180deg,rgba(255,255,255,.012),rgba(0,0,0,0));transition:border-color .3s}
@@ -305,6 +312,13 @@ footer .small a{color:var(--platinum);text-decoration:none}
       <div class="fighter-name gold-text" data-i="me_name">To Be Announced</div>
       <div class="fighter-alias" data-i="me_alias">A world-championship calibre headliner</div>
       <div class="fighter-detail" data-i="me_detail">Noche de Gloria &nbsp;·&nbsp; September 26</div>
+      <div class="cd-title" data-i="cd_title">Main Event Announcement &middot; July 4</div>
+      <div class="cd" id="cd">
+        <div class="u"><div class="v gold-text" id="cd-d">00</div><div class="k" data-i="cd_d">Days</div></div>
+        <div class="u"><div class="v" id="cd-h">00</div><div class="k" data-i="cd_h">Hours</div></div>
+        <div class="u"><div class="v" id="cd-m">00</div><div class="k" data-i="cd_m">Minutes</div></div>
+        <div class="u"><div class="v" id="cd-s">00</div><div class="k" data-i="cd_s">Seconds</div></div>
+      </div>
       <div class="opponent-tba" data-i="opponent_tba">Full Card Reveal Coming</div>
     </div>
     <div class="featured">
@@ -481,7 +495,7 @@ es:{
   copro:"Presentado por Four Kings Promotions & Bajío Boxing Promotions",
   card_overline:"Cartelera",card_h2:"La cartelera.",
   main_event:"Pelea Estelar",
-  opponent_tba:"Cartelera Completa Próximamente",me_name:"Por Anunciar",me_alias:"Un estelarista de calibre de campeonato mundial",me_detail:"Noche de Gloria · 26 de Septiembre",
+  opponent_tba:"Cartelera Completa Próximamente",cd_title:"Anuncio de la Pelea Estelar · 4 de Julio",cd_d:"Días",cd_h:"Horas",cd_m:"Minutos",cd_s:"Segundos",cd_done:"La espera terminó. Anuncio en vivo.",me_name:"Por Anunciar",me_alias:"Un estelarista de calibre de campeonato mundial",me_detail:"Noche de Gloria · 26 de Septiembre",
   tag_undefeated:"Prospecto Invicto",tag_champion:"Excampeona Mundial",
   rec_tba:"Récord TBA",rec_tba2:"Récord TBA",rec_tba3:"Récord TBA",rec_tba4:"Récord TBA",rec_tba5:"Récord TBA",
   stat_pro:"Peleas Profesionales",stat_am:"Peleas Amateur",stat_total:"Peleas Totales",
@@ -550,7 +564,7 @@ en:{
   copro:"Presented by Four Kings Promotions & Bajío Boxing Promotions",
   card_overline:"Fight Card",card_h2:"The card.",
   main_event:"Main Event",
-  opponent_tba:"Full Card Reveal Coming",me_name:"To Be Announced",me_alias:"A world-championship calibre headliner",me_detail:"Noche de Gloria · September 26",
+  opponent_tba:"Full Card Reveal Coming",cd_title:"Main Event Announcement · July 4",cd_d:"Days",cd_h:"Hours",cd_m:"Minutes",cd_s:"Seconds",cd_done:"The wait is over. Announcement live.",me_name:"To Be Announced",me_alias:"A world-championship calibre headliner",me_detail:"Noche de Gloria · September 26",
   tag_undefeated:"Undefeated Prospect",tag_champion:"Former World Champion",
   rec_tba:"Record TBA",rec_tba2:"Record TBA",rec_tba3:"Record TBA",rec_tba4:"Record TBA",rec_tba5:"Record TBA",
   stat_pro:"Professional Bouts",stat_am:"Amateur Bouts",stat_total:"Total Fights",
@@ -610,6 +624,18 @@ const cio=new IntersectionObserver(es=>{es.forEach(e=>{
   requestAnimationFrame(step);
 })},{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+// countdown to July 4 announcement (León, GTO time)
+const cdTarget=new Date('2026-07-04T00:00:00-06:00').getTime();
+const cdEls={d:document.getElementById('cd-d'),h:document.getElementById('cd-h'),m:document.getElementById('cd-m'),s:document.getElementById('cd-s')};
+function cdTick(){
+  const diff=cdTarget-Date.now();
+  if(diff<=0){const c=document.getElementById('cd');if(c){c.outerHTML='<div class="fighter-alias" style="margin-top:26px">'+(T[lang].cd_done||'Announcement live.')+'</div>'}return}
+  const d=Math.floor(diff/864e5),h=Math.floor(diff%864e5/36e5),m=Math.floor(diff%36e5/6e4),s=Math.floor(diff%6e4/1e3);
+  cdEls.d.textContent=String(d).padStart(2,'0');cdEls.h.textContent=String(h).padStart(2,'0');
+  cdEls.m.textContent=String(m).padStart(2,'0');cdEls.s.textContent=String(s).padStart(2,'0');
+  setTimeout(cdTick,1000);
+}
+if(cdEls.d)cdTick();
 // vip gallo video: lazy load + play in view
 const vv=document.querySelector('.vip-video');
 if(vv&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
