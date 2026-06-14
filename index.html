@@ -339,7 +339,7 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
       <div class="sub" data-i="event_sub">A new tradition begins in the heart of the Bajío.</div>
       <div class="rule"></div>
       <div class="row">
-        <div><div class="k" data-i="k_date">Date</div><div class="v" data-i="v_date">Saturday, August 15</div></div>
+        <div><div class="k" data-i="k_date">Date</div><div class="v" data-i="v_date">Saturday, September 26</div></div>
         <div><div class="k" data-i="k_doors">Doors</div><div class="v" data-i="v_doors">To be confirmed</div></div>
         <div><div class="k" data-i="k_venue">Venue</div><div class="v">Palenque de la Feria de León</div></div>
         <div><div class="k" data-i="k_city">City</div><div class="v">León, Guanajuato, Mexico</div></div>
@@ -755,7 +755,7 @@ if(matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: r
   },{passive:true});
 }
 const saved=localStorage.getItem('fk_lang');
-if(saved&&saved!=='en') setLang(saved);
+setLang(saved==='es'?'es':'en');
 </script>
 </body>
 </html>
