@@ -161,6 +161,9 @@ section{padding:120px 0;position:relative}
 .founder .bio p:last-child{margin-bottom:0}
 .founder .bio strong{color:var(--bone);font-weight:500}
 .founder .sig{margin-top:28px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.24em;font-size:13px;color:var(--gold)}
+.logo-mark{display:flex;align-items:center;justify-content:center;padding:24px 0;position:relative}
+.logo-mark::before{content:"";position:absolute;width:78%;max-width:300px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(213,152,35,.18),transparent 66%);pointer-events:none}
+.logo-mark img{position:relative;width:100%;height:auto;max-width:300px;display:block;filter:grayscale(1) sepia(.92) saturate(1.7) hue-rotate(4deg) brightness(.95) contrast(1.06) drop-shadow(0 18px 50px rgba(0,0,0,.55))}
 
 footer{padding:70px 0 50px;border-top:1px solid var(--line);text-align:center}
 footer img{width:280px;height:auto;opacity:.92;margin-bottom:24px}
@@ -238,6 +241,18 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
   .featured{grid-template-columns:1fr}
   section{padding:84px 0}
   .card-stats{gap:36px}
+}
+@media(max-width:560px){
+  nav,nav.scrolled{padding:14px 18px}
+  nav .right{gap:14px}
+  .nav-ctas{gap:12px}
+  .nav-ctas a{font-size:11px;letter-spacing:.16em}
+  .lang-toggle{margin-left:6px}
+  .lang-toggle button{padding:6px 10px;font-size:11px;letter-spacing:.12em}
+}
+@media(max-width:430px){
+  nav .nav-ctas{display:none}
+  nav .right{gap:0}
 }
 @media(max-width:520px){.tickets{grid-template-columns:1fr}}
 </style>
@@ -477,6 +492,27 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
   </div>
 </section>
 
+<section id="partner-javier" class="wrap">
+  <div class="sec-head reveal">
+    <span class="overline" data-i="jp_overline">Promotional Partner</span>
+    <h2 data-i="jp_h2">Where passion becomes a platform.</h2>
+  </div>
+  <div class="founder reveal">
+    <div class="logo-mark">
+      <img src="parrillafest-logo.webp" alt="Parrillafest GTO &middot; Festival de Parrilla &amp; Ahumados" loading="lazy">
+    </div>
+    <div>
+      <div class="quote" data-i="jp_quote">Create memorable experiences. Build lasting value for the community.</div>
+      <div class="bio">
+        <p data-i="jp_p1">Javier Echeverr&iacute;a turns ambitious ideas into high-impact projects. A strategic and operational leader with a deep passion for the craft of fire, grill, and smoke, his signature is transforming a vision into an experience that moves an entire region.</p>
+        <p data-i="jp_p2">His defining work is <strong>Parrillafest Gto</strong>, which he built from the ground up into a large-scale culinary festival. More than an event, he raised a platform that brought together cooks, firemasters, exhibitors, artists, sponsors, institutions, and families, aligning government agencies, suppliers, and multidisciplinary teams while meeting every demand of logistics, safety, civil protection, and commercialization.</p>
+        <p data-i="jp_p3">From brand and financial structure to permits, sponsorships, and the visitor experience, Javier led every front. Parrillafest Gto became a regional benchmark and proof of his core strength: turning passion into economic, tourism, and cultural impact. Today he drives new brands with the same philosophy, memorable experiences, community value, and sustainable initiatives built for the long term.</p>
+        <div class="sig" data-i="jp_sig">Javier Echeverr&iacute;a &middot; Creator of Parrillafest Gto &middot; Promotional Partner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="partner" class="wrap">
   <div class="partner reveal">
     <span class="overline" data-i="partner_overline">Founding Partnership</span>
@@ -555,6 +591,13 @@ es:{
   founder_p2:'Ganó los Chicago Golden Gloves en 2013 antes de cruzar a México, donde se convirtió en Campeón Municipal de León, Campeón Estatal de Guanajuato y medallista de bronce nacional. Como profesional, construyó un récord de <strong>22-2</strong> como contendiente ligero del CMB (WBC), se entrenó con Freddie Roach en Wild Card Boxing Club y fue sparring de Manny Pacquiao. Ha peleado en carteleras de ESPN y Pay-Per-View contra algunos de los nombres más reconocidos del deporte.',
   founder_p3:"Para Noche de Gloria, Gio pasa al otro lado de las cuerdas, no en la cartelera, sino construyéndola. Es el comienzo de lo que se propuso crear: una plataforma donde los peleadores latinos y las comunidades que los formaron tengan un lugar en la mesa. Boxeo de clase mundial, montado en los lugares que lo crearon, controlado por la gente que lo vive.",
   founder_sig:"Giovanni \"El Cabrón\" Cabrera · Fundador y Promotor, Four Kings Promotions",
+  jp_overline:"Socio Promocional",
+  jp_h2:"Cuando la pasión se vuelve plataforma.",
+  jp_quote:"Crear experiencias memorables y generar valor para la comunidad.",
+  jp_p1:"Javier Echeverría convierte ideas ambiciosas en proyectos de alto impacto. Líder estratégico y operativo con una pasión profunda por el arte del fuego, la parrilla y el ahumado, su sello es transformar una visión en una experiencia que mueve a toda una región.",
+  jp_p2:"Su mayor obra es <strong>Parrillafest Gto</strong>, que construyó desde cero hasta convertirlo en un festival gastronómico de gran escala. Más que un evento, levantó una plataforma que reunió a cocineros, firemasters, expositores, artistas, patrocinadores, instituciones y familias, alineando dependencias gubernamentales, proveedores y equipos multidisciplinarios, cumpliendo cada exigencia de logística, seguridad, protección civil y comercialización.",
+  jp_p3:"De la marca y la estructura financiera a los permisos, los patrocinios y la experiencia del visitante, Javier dirigió cada frente. Parrillafest Gto se consolidó como referencia en la región y como prueba de su mayor fortaleza: convertir la pasión en impacto económico, turístico y cultural. Hoy impulsa nuevas marcas con la misma filosofía, experiencias memorables, valor para la comunidad e iniciativas sostenibles de largo plazo.",
+  jp_sig:"Javier Echeverría · Creador de Parrillafest Gto · Socio Promocional",
   partner_overline:"Patrocinio Fundador",
   partner_h2:"Una marca en el centro del ring.",
   partner_p1:"Four Kings ofrece un único Patrocinio Fundador para su era inaugural. Una asociación definitiva y exclusiva por categoría en el corazón de cada cartelera, cada transmisión y cada espacio en el Bajío.",
@@ -624,6 +667,13 @@ en:{
   founder_p2:'He won the Chicago Golden Gloves in 2013 before crossing to Mexico, where he became Municipal Champion of León, State Champion of Guanajuato, and a national bronze medalist. As a professional, he built a <strong>22-2</strong> record as a WBC lightweight contender, trained under Freddie Roach at Wild Card Boxing Club, and served as a sparring partner for Manny Pacquiao. He has fought on ESPN and Pay-Per-View cards against some of the sport\'s most recognized names.',
   founder_p3:"For Noche de Gloria, Gio steps to the other side of the ropes, not on the card, but building it. It is the beginning of what he set out to create: a platform where Latino fighters and the communities that raised them have a seat at the table. World-class boxing, staged in the places that made it, controlled by the people who live it.",
   founder_sig:'Giovanni "El Cabrón" Cabrera · Founder & Promoter, Four Kings Promotions',
+  jp_overline:"Promotional Partner",
+  jp_h2:"Where passion becomes a platform.",
+  jp_quote:"Create memorable experiences. Build lasting value for the community.",
+  jp_p1:"Javier Echeverría turns ambitious ideas into high-impact projects. A strategic and operational leader with a deep passion for the craft of fire, grill, and smoke, his signature is transforming a vision into an experience that moves an entire region.",
+  jp_p2:"His defining work is <strong>Parrillafest Gto</strong>, which he built from the ground up into a large-scale culinary festival. More than an event, he raised a platform that brought together cooks, firemasters, exhibitors, artists, sponsors, institutions, and families, aligning government agencies, suppliers, and multidisciplinary teams while meeting every demand of logistics, safety, civil protection, and commercialization.",
+  jp_p3:"From brand and financial structure to permits, sponsorships, and the visitor experience, Javier led every front. Parrillafest Gto became a regional benchmark and proof of his core strength: turning passion into economic, tourism, and cultural impact. Today he drives new brands with the same philosophy, memorable experiences, community value, and sustainable initiatives built for the long term.",
+  jp_sig:"Javier Echeverría · Creator of Parrillafest Gto · Promotional Partner",
   partner_overline:"Founding Partnership",
   partner_h2:"One brand at the center of the ring.",
   partner_p1:"Four Kings extends a single Founding Partnership for its inaugural era. A defining, category-exclusive association at the heart of every card, every broadcast, and every room in the Bajío.",
