@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Four Kings Promotions | Noche de Gloria</title>
-<meta name="description" content="Four Kings Promotions presents Noche de Gloria. September 26, 2026 at Palenque de la Feria de León. 7 bouts. Crafted in the Bajío, built for the world.">
+<meta name="description" content="Four Kings Promotions presents Noche de Gloria. September 26, 2026 at Palenque de la Feria de León. 8 bouts. Crafted in the Bajío, built for the world.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +68,7 @@ nav a:hover::after{width:100%}
 .heroreach .sep{color:var(--line)}
 .scrollcue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-family:var(--cond);letter-spacing:.3em;font-size:10px;text-transform:uppercase;color:var(--muted);opacity:0;animation:fade 1s ease forwards 1.4s}
 .scrollcue i{display:block;width:1px;height:46px;margin:12px auto 0;background:linear-gradient(var(--gold),transparent);animation:pulse 2.4s ease-in-out infinite}
+@media(max-width:640px){.hero{padding-bottom:180px}}
 
 section{padding:120px 0;position:relative}
 .sec-head{display:flex;flex-direction:column;gap:18px;margin-bottom:60px;max-width:760px}
@@ -125,7 +126,10 @@ section{padding:120px 0;position:relative}
 .card-stats .s .n{font-family:var(--display);font-weight:400;font-size:52px;letter-spacing:.03em;line-height:1}
 .card-stats .s .l{font-family:var(--cond);text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:var(--muted);margin-top:6px}
 
-.tickets{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:60px}
+.tickets{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:60px}
+@media(max-width:900px){.tickets{grid-template-columns:repeat(2,1fr)}}
+.main-event.comain{padding:38px;margin-bottom:40px;border-color:var(--line)}
+.main-event.comain .fighter-name{font-size:clamp(34px,5vw,58px)}
 .tickets .t{border:1px solid var(--line);padding:36px 24px;text-align:center;background:linear-gradient(180deg,rgba(255,255,255,.012),rgba(0,0,0,0));transition:border-color .35s,transform .35s}
 .tickets .t:hover{border-color:var(--gold);transform:translateY(-4px)}
 .tickets .t.vip{border-color:var(--gold);background:radial-gradient(120% 160% at 50% 0%,rgba(213,152,35,.10),transparent 60%)}
@@ -296,7 +300,7 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
 </nav>
 
 <div class="ticker" aria-hidden="true"><div class="track" id="tickertrack">
-  <span>Noche de Gloria <b>·</b> September 26, 2026 <b>·</b> Palenque de la Feria de León <b>·</b> 7 Bouts <b>·</b> One Night <b>·</b>&nbsp;</span>
+  <span>Noche de Gloria <b>·</b> September 26, 2026 <b>·</b> Palenque de la Feria de León <b>·</b> 8 Bouts <b>·</b> One Night <b>·</b>&nbsp;</span>
 </div></div>
 
 <header class="hero">
@@ -377,6 +381,12 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
       <div class="fighter-name">Luis Angel Mandujano Solís</div>
       <div class="fighter-detail">🇲🇽 9-8 &nbsp;·&nbsp; Tuxtla Gutiérrez, Chiapas</div>
     </div>
+    <div class="main-event comain">
+      <span class="overline" data-i="cm_head">Co-Main Event</span>
+      <div class="fighter-name gold-text">Giovanni &ldquo;El Cabrón&rdquo; Cabrera</div>
+      <div class="fighter-detail" data-i="cm_rec">22-2 &nbsp;·&nbsp; WBC Lightweight Contender</div>
+      <div class="opponent-tba" data-i="cm_tba">Opponent TBA</div>
+    </div>
     <div class="bout-group">
       <span class="glabel overline" data-i="g4rounds">4 Rounds</span>
       <div class="bouts">
@@ -432,8 +442,7 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
       </div>
     </div>
     <div class="card-stats">
-      <div class="s"><div class="n" data-count="7">0</div><div class="l" data-i="stat_bouts">Bouts</div></div>
-      <div class="s"><div class="n" data-count="36">0</div><div class="l" data-i="stat_rounds">Scheduled Rounds</div></div>
+      <div class="s"><div class="n" data-count="8">0</div><div class="l" data-i="stat_bouts">Bouts</div></div>
       <div class="s"><div class="n" data-count="8">0</div><div class="l" data-i="stat_main">Round Main Event</div></div>
     </div>
   </div>
@@ -445,7 +454,8 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
     <h2 data-i="tickets_h2">Secure your seat.</h2>
   </div>
   <div class="tickets reveal">
-    <a class="t vip" href="#vip" style="text-decoration:none;color:inherit;display:block"><div class="tier">VIP</div><div class="price">$1,000</div><div class="curr">MXN</div><div class="incl" data-i="vip_incl">Includes The King's Circle &darr;</div></a>
+    <a class="t vip" href="#vip" style="text-decoration:none;color:inherit;display:block"><div class="tier" data-i="tier_vipy">VIP Yellow</div><div class="price">$1,000</div><div class="curr">MXN</div><div class="incl" data-i="vip_incl">Includes The King's Circle &darr;</div></a>
+    <div class="t"><div class="tier" data-i="tier_vipo">VIP Orange</div><div class="price">$500</div><div class="curr">MXN</div></div>
     <div class="t"><div class="tier" data-i="tier_prefgold">Preferred / Gold</div><div class="price">$250</div><div class="curr">MXN</div></div>
     <div class="t"><div class="tier" data-i="tier_ga">General Admission</div><div class="price">$100</div><div class="curr">MXN</div></div>
   </div>
@@ -614,9 +624,10 @@ es:{
   g4rounds:"4 Rounds",g6rounds:"6 Rounds",
   feat_tag:"Pelea Destacada a 4 Rounds",
   tbd:"Por Anunciar",wt_tbd:"Peso Por Anunciar",
-  stat_bouts:"Peleas",stat_rounds:"Rounds Programados",stat_main:"Rounds · Pelea Estelar",
+  cm_head:"Pelea Coestelar",cm_rec:"22-2 · Contendiente Ligero del CMB (WBC)",cm_tba:"Rival Por Anunciar",
+  stat_bouts:"Peleas",stat_main:"Rounds · Pelea Estelar",
   tickets_overline:"Boletos",tickets_h2:"Asegura tu lugar.",
-  tier_prefgold:"Preferente / Oro",tier_ga:"Admisión General",
+  tier_vipy:"VIP Amarillo",tier_vipo:"VIP Naranja",tier_prefgold:"Preferente / Oro",tier_ga:"Admisión General",
   ethos_overline:"La Filosofía",
   ethos_h2:'Nacido de una región<br>que construye para perdurar.',
   ethos_lead:'El Bajío siempre ha sido un lugar donde <em>la artesanía importa</em>. Donde la atención meticulosa al detalle no es un lujo sino una tradición. Noche de Gloria lleva ese mismo espíritu independiente al ring.',
@@ -691,9 +702,10 @@ en:{
   g4rounds:"4 Rounds",g6rounds:"6 Rounds",
   feat_tag:"Featured 4-Round Bout",
   tbd:"TBD",wt_tbd:"Weight TBD",
-  stat_bouts:"Bouts",stat_rounds:"Scheduled Rounds",stat_main:"Round Main Event",
+  cm_head:"Co-Main Event",cm_rec:"22-2 · WBC Lightweight Contender",cm_tba:"Opponent TBA",
+  stat_bouts:"Bouts",stat_main:"Round Main Event",
   tickets_overline:"Tickets",tickets_h2:"Secure your seat.",
-  tier_prefgold:"Preferred / Gold",tier_ga:"General Admission",
+  tier_vipy:"VIP Yellow",tier_vipo:"VIP Orange",tier_prefgold:"Preferred / Gold",tier_ga:"General Admission",
   ethos_overline:"The Ethos",
   ethos_h2:'Born from a region<br>that builds things to last.',
   ethos_lead:'The Bajío has always been a place where <em>craftsmanship matters</em>. Where meticulous attention to detail is not a luxury but a tradition. Noche de Gloria carries that same independent spirit into the ring.',
