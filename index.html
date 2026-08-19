@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Four Kings Promotions | Noche de Gloria</title>
-<meta name="description" content="Four Kings Promotions presents Noche de Gloria. September 26, 2026 at Palenque de la Feria de León. 18 bouts. Crafted in the Bajío, built for the world.">
+<meta name="description" content="Four Kings Promotions presents Noche de Gloria. September 26, 2026 at Palenque de la Feria de León. 7 bouts. Crafted in the Bajío, built for the world.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,11 +109,23 @@ section{padding:120px 0;position:relative}
 .featured .f .fname{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
 .featured .f .frec{font-family:var(--cond);font-size:13px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
 .featured .f .ftag{font-family:var(--cond);font-size:12px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-top:8px}
+.bout-group{margin-top:48px}
+.bout-group .glabel{display:block;text-align:center;margin-bottom:20px}
+.bouts{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.bout{border:1px solid var(--line);padding:30px 26px;text-align:center;background:linear-gradient(180deg,rgba(255,255,255,.012),rgba(0,0,0,0));transition:border-color .3s}
+.bout:hover{border-color:var(--gold)}
+.bout.feat{border-color:var(--gold);background:radial-gradient(120% 160% at 50% 0%,rgba(213,152,35,.08),transparent 60%)}
+.bout .bwt{font-family:var(--cond);font-size:13px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.bout .bn{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.03em;text-transform:uppercase;line-height:1.15}
+.bout .br{font-family:var(--cond);font-size:12px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-top:4px}
+.bout .bvs{font-family:var(--body);font-style:italic;font-size:15px;color:var(--gold-bright);margin:10px 0}
+.bout .btag{font-family:var(--cond);font-size:12px;letter-spacing:.16em;color:var(--gold-bright);text-transform:uppercase;margin-top:16px}
+@media(max-width:760px){.bouts{grid-template-columns:1fr}}
 .card-stats{display:flex;justify-content:center;gap:60px;margin-top:48px;padding-top:36px;border-top:1px solid var(--line);text-align:center;flex-wrap:wrap}
 .card-stats .s .n{font-family:var(--display);font-weight:400;font-size:52px;letter-spacing:.03em;line-height:1}
 .card-stats .s .l{font-family:var(--cond);text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:var(--muted);margin-top:6px}
 
-.tickets{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:60px}
+.tickets{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:60px}
 .tickets .t{border:1px solid var(--line);padding:36px 24px;text-align:center;background:linear-gradient(180deg,rgba(255,255,255,.012),rgba(0,0,0,0));transition:border-color .35s,transform .35s}
 .tickets .t:hover{border-color:var(--gold);transform:translateY(-4px)}
 .tickets .t.vip{border-color:var(--gold);background:radial-gradient(120% 160% at 50% 0%,rgba(213,152,35,.10),transparent 60%)}
@@ -284,7 +296,7 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
 </nav>
 
 <div class="ticker" aria-hidden="true"><div class="track" id="tickertrack">
-  <span>Noche de Gloria <b>·</b> September 26, 2026 <b>·</b> Palenque de la Feria de León <b>·</b> 18 Bouts <b>·</b> One Night <b>·</b>&nbsp;</span>
+  <span>Noche de Gloria <b>·</b> September 26, 2026 <b>·</b> Palenque de la Feria de León <b>·</b> 7 Bouts <b>·</b> One Night <b>·</b>&nbsp;</span>
 </div></div>
 
 <header class="hero">
@@ -358,40 +370,71 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
   </div>
   <div class="fightcard reveal">
     <div class="main-event">
-      <span class="overline" data-i="main_event">Main Event</span>
-      <div class="fighter-name gold-text" data-i="me_name">To Be Announced</div>
-      <div class="fighter-alias" data-i="me_alias">A world-championship calibre headliner</div>
-      <div class="fighter-detail" data-i="me_detail">Noche de Gloria &nbsp;·&nbsp; September 26</div>
-      <div class="cd-title" data-i="cd_title">Main Event Announcement &middot; July 4</div>
-      <div class="cd" id="cd">
-        <div class="u"><div class="v gold-text" id="cd-d">00</div><div class="k" data-i="cd_d">Days</div></div>
-        <div class="u"><div class="v" id="cd-h">00</div><div class="k" data-i="cd_h">Hours</div></div>
-        <div class="u"><div class="v" id="cd-m">00</div><div class="k" data-i="cd_m">Minutes</div></div>
-        <div class="u"><div class="v" id="cd-s">00</div><div class="k" data-i="cd_s">Seconds</div></div>
-      </div>
-      <div class="opponent-tba" data-i="opponent_tba">Full Card Reveal Coming</div>
+      <span class="overline" data-i="me_head">8-Round Main Event &middot; 122 lbs / 55.45 kg</span>
+      <div class="fighter-name gold-text">Juan &ldquo;El Marro&rdquo; Rocha</div>
+      <div class="fighter-detail">🇲🇽 14-1-1 &nbsp;·&nbsp; León, Gto.</div>
+      <div class="fighter-alias" style="margin:18px 0 12px">vs.</div>
+      <div class="fighter-name">Luis Angel Mandujano Solís</div>
+      <div class="fighter-detail">🇲🇽 9-8 &nbsp;·&nbsp; Tuxtla Gutiérrez, Chiapas</div>
     </div>
-    <div class="featured">
-      <div class="f">
-        <div class="fname">Dewone Johnson</div>
-        <div class="frec">17-0 &nbsp;·&nbsp; 11 KO</div>
-        <div class="ftag" data-i="tag_undefeated">Undefeated Prospect</div>
+    <div class="bout-group">
+      <span class="glabel overline" data-i="g4rounds">4 Rounds</span>
+      <div class="bouts">
+        <div class="bout">
+          <div class="bwt">147 lbs / 67 kg</div>
+          <div class="bn">🇲🇽 Johan Moises López Valenzuela</div>
+          <div class="br">2-0 &nbsp;·&nbsp; León, Gto.</div>
+          <div class="bvs">vs.</div>
+          <div class="bn">🇲🇽 Angel Yael Trejo Guerrero</div>
+          <div class="br">1-3 &nbsp;·&nbsp; CDMX</div>
+        </div>
+        <div class="bout">
+          <div class="bwt">130 lbs / 60 kg</div>
+          <div class="bn">🇲🇽 Armando Flores Almanza</div>
+          <div class="br">2-0 &nbsp;·&nbsp; León, Gto.</div>
+          <div class="bvs">vs.</div>
+          <div class="bn">🇲🇽 <span data-i="tbd">TBD</span></div>
+        </div>
+        <div class="bout">
+          <div class="bwt" data-i="wt_tbd">Weight TBD</div>
+          <div class="bn">🇺🇸 Brianna Gulia</div>
+          <div class="bvs">vs.</div>
+          <div class="bn" data-i="tbd">TBD</div>
+        </div>
+        <div class="bout feat">
+          <div class="bwt">118 lbs / 53.5 kg</div>
+          <div class="bn">🇲🇽 Lupita &ldquo;La Fiera&rdquo; Atilano</div>
+          <div class="br">7-10-4 &nbsp;·&nbsp; León, Gto.</div>
+          <div class="bvs">vs.</div>
+          <div class="bn">🇲🇽 Alejandra Soto Martínez</div>
+          <div class="br">8-10-1 &nbsp;·&nbsp; CDMX</div>
+          <div class="btag" data-i="feat_tag">Featured 4-Round Bout</div>
+        </div>
       </div>
-      <div class="f">
-        <div class="fname">Mary McGee</div>
-        <div class="frec">28-5 &nbsp;·&nbsp; 16 KO</div>
-        <div class="ftag" data-i="tag_champion">Former World Champion</div>
+    </div>
+    <div class="bout-group">
+      <span class="glabel overline" data-i="g6rounds">6 Rounds</span>
+      <div class="bouts">
+        <div class="bout">
+          <div class="bwt">135 lbs / 62 kg</div>
+          <div class="bn">🇲🇽 Armando &ldquo;Chica&rdquo; Ramírez</div>
+          <div class="br">8-4-2 &nbsp;·&nbsp; Celaya, Gto.</div>
+          <div class="bvs">vs.</div>
+          <div class="bn">🇲🇽 <span data-i="tbd">TBD</span></div>
+        </div>
+        <div class="bout">
+          <div class="bwt">126 lbs / 57 kg</div>
+          <div class="bn">🇲🇽 Diego &ldquo;Superman&rdquo; Padilla</div>
+          <div class="br">4-1-1 &nbsp;·&nbsp; León, Gto.</div>
+          <div class="bvs">vs.</div>
+          <div class="bn">🇲🇽 <span data-i="tbd">TBD</span></div>
+        </div>
       </div>
-      <div class="f"><div class="fname">Victor Limas</div><div class="frec" data-i="rec_tba">Record TBA</div></div>
-      <div class="f"><div class="fname">Xavier Diaz</div><div class="frec" data-i="rec_tba2">Record TBA</div></div>
-      <div class="f"><div class="fname">Mikey Diaz</div><div class="frec" data-i="rec_tba3">Record TBA</div></div>
-      <div class="f"><div class="fname">Ariel Sesmas</div><div class="frec" data-i="rec_tba4">Record TBA</div></div>
-      <div class="f"><div class="fname">Luis Garcia</div><div class="frec" data-i="rec_tba5">Record TBA</div></div>
     </div>
     <div class="card-stats">
-      <div class="s"><div class="n" data-count="12">0</div><div class="l" data-i="stat_pro">Professional Bouts</div></div>
-      <div class="s"><div class="n" data-count="6">0</div><div class="l" data-i="stat_am">Amateur Bouts</div></div>
-      <div class="s"><div class="n" data-count="18">0</div><div class="l" data-i="stat_total">Total Fights</div></div>
+      <div class="s"><div class="n" data-count="7">0</div><div class="l" data-i="stat_bouts">Bouts</div></div>
+      <div class="s"><div class="n" data-count="36">0</div><div class="l" data-i="stat_rounds">Scheduled Rounds</div></div>
+      <div class="s"><div class="n" data-count="8">0</div><div class="l" data-i="stat_main">Round Main Event</div></div>
     </div>
   </div>
 </section>
@@ -402,10 +445,9 @@ background:radial-gradient(38% 30% at 18% 64%,rgba(222,186,120,.16),transparent 
     <h2 data-i="tickets_h2">Secure your seat.</h2>
   </div>
   <div class="tickets reveal">
-    <a class="t vip" href="#vip" style="text-decoration:none;color:inherit;display:block"><div class="tier">VIP Ringside</div><div class="price">$2,000</div><div class="curr">MXN</div><div class="incl" data-i="vip_incl">Includes The King's Circle &darr;</div></a>
-    <div class="t"><div class="tier" data-i="tier_gold">Gold</div><div class="price">$800</div><div class="curr">MXN</div></div>
-    <div class="t"><div class="tier" data-i="tier_pref">Preferred</div><div class="price">$500</div><div class="curr">MXN</div></div>
-    <div class="t"><div class="tier" data-i="tier_ga">General Admission</div><div class="price">$250</div><div class="curr">MXN</div></div>
+    <a class="t vip" href="#vip" style="text-decoration:none;color:inherit;display:block"><div class="tier">VIP</div><div class="price">$1,000</div><div class="curr">MXN</div><div class="incl" data-i="vip_incl">Includes The King's Circle &darr;</div></a>
+    <div class="t"><div class="tier" data-i="tier_prefgold">Preferred / Gold</div><div class="price">$250</div><div class="curr">MXN</div></div>
+    <div class="t"><div class="tier" data-i="tier_ga">General Admission</div><div class="price">$100</div><div class="curr">MXN</div></div>
   </div>
 </section>
 
@@ -567,13 +609,14 @@ es:{
   k_broadcast:"Transmisión",v_broadcast:"México · EE.UU. · Latinoamérica",
   copro:"Presentado por Four Kings Promotions & Bajío Boxing Promotions",
   card_overline:"Cartelera",card_h2:"La cartelera.",
-  main_event:"Pelea Estelar",
-  opponent_tba:"Cartelera Completa Próximamente",cd_title:"Anuncio de la Pelea Estelar · 4 de Julio",cd_d:"Días",cd_h:"Horas",cd_m:"Minutos",cd_s:"Segundos",cd_done:"La espera terminó. Anuncio en vivo.",hcd_label:"Para la Noche de Pelea",hr_t:"Transmisión",hcd_done:"Noche de Pelea.",me_name:"Por Anunciar",me_alias:"Un estelarista de calibre de campeonato mundial",me_detail:"Noche de Gloria · 26 de Septiembre",
-  tag_undefeated:"Prospecto Invicto",tag_champion:"Excampeona Mundial",
-  rec_tba:"Récord TBA",rec_tba2:"Récord TBA",rec_tba3:"Récord TBA",rec_tba4:"Récord TBA",rec_tba5:"Récord TBA",
-  stat_pro:"Peleas Profesionales",stat_am:"Peleas Amateur",stat_total:"Peleas Totales",
+  hcd_label:"Para la Noche de Pelea",hr_t:"Transmisión",hcd_done:"Noche de Pelea.",
+  me_head:"Pelea Estelar a 8 Rounds · 122 lbs / 55.45 kg",
+  g4rounds:"4 Rounds",g6rounds:"6 Rounds",
+  feat_tag:"Pelea Destacada a 4 Rounds",
+  tbd:"Por Anunciar",wt_tbd:"Peso Por Anunciar",
+  stat_bouts:"Peleas",stat_rounds:"Rounds Programados",stat_main:"Rounds · Pelea Estelar",
   tickets_overline:"Boletos",tickets_h2:"Asegura tu lugar.",
-  tier_gold:"Oro",tier_pref:"Preferente",tier_ga:"Admisión General",
+  tier_prefgold:"Preferente / Oro",tier_ga:"Admisión General",
   ethos_overline:"La Filosofía",
   ethos_h2:'Nacido de una región<br>que construye para perdurar.',
   ethos_lead:'El Bajío siempre ha sido un lugar donde <em>la artesanía importa</em>. Donde la atención meticulosa al detalle no es un lujo sino una tradición. Noche de Gloria lleva ese mismo espíritu independiente al ring.',
@@ -643,13 +686,14 @@ en:{
   k_broadcast:"Broadcast",v_broadcast:"México · U.S. · Latin America",
   copro:"Presented by Four Kings Promotions & Bajío Boxing Promotions",
   card_overline:"Fight Card",card_h2:"The card.",
-  main_event:"Main Event",
-  opponent_tba:"Full Card Reveal Coming",cd_title:"Main Event Announcement · July 4",cd_d:"Days",cd_h:"Hours",cd_m:"Minutes",cd_s:"Seconds",cd_done:"The wait is over. Announcement live.",hcd_label:"To Fight Night",hr_t:"Broadcast",hcd_done:"Fight Night.",me_name:"To Be Announced",me_alias:"A world-championship calibre headliner",me_detail:"Noche de Gloria · September 26",
-  tag_undefeated:"Undefeated Prospect",tag_champion:"Former World Champion",
-  rec_tba:"Record TBA",rec_tba2:"Record TBA",rec_tba3:"Record TBA",rec_tba4:"Record TBA",rec_tba5:"Record TBA",
-  stat_pro:"Professional Bouts",stat_am:"Amateur Bouts",stat_total:"Total Fights",
+  hcd_label:"To Fight Night",hr_t:"Broadcast",hcd_done:"Fight Night.",
+  me_head:"8-Round Main Event · 122 lbs / 55.45 kg",
+  g4rounds:"4 Rounds",g6rounds:"6 Rounds",
+  feat_tag:"Featured 4-Round Bout",
+  tbd:"TBD",wt_tbd:"Weight TBD",
+  stat_bouts:"Bouts",stat_rounds:"Scheduled Rounds",stat_main:"Round Main Event",
   tickets_overline:"Tickets",tickets_h2:"Secure your seat.",
-  tier_gold:"Gold",tier_pref:"Preferred",tier_ga:"General Admission",
+  tier_prefgold:"Preferred / Gold",tier_ga:"General Admission",
   ethos_overline:"The Ethos",
   ethos_h2:'Born from a region<br>that builds things to last.',
   ethos_lead:'The Bajío has always been a place where <em>craftsmanship matters</em>. Where meticulous attention to detail is not a luxury but a tradition. Noche de Gloria carries that same independent spirit into the ring.',
@@ -679,6 +723,23 @@ en:{
   partner_p2:"This is not signage. It is shared authorship of a cultural occasion.",
   slot_founding:"Founding Partner",slot_tequila:"Official Tequila Partner",slot_broadcast:"Broadcast",
   partner_cta:"Request the Partnership Brief",
+  bc_overline:"The Broadcast",bc_h2:"Seen across the Americas.",
+  bc_p:"Carried on pay television, satellite, and FAST platforms in México, the United States, and Latin America.",
+  bc1_b:"México",bc1_l:"potential reach",bc2_b:"United States",bc2_l:"potential reach",
+  bc3_b:"LATAM &amp; Caribbean",bc3_l:"potential reach",bc4_b:"Platforms",bc4_l:"pay TV &amp; FAST",
+  bc_note:"Potential reach in homes via broadcast network distribution",
+  vip_crest:"Four Kings · VIP",
+  vip_h2:"The King&rsquo;s Circle",
+  vip_lead:"Forty seats at the apron of the ring. A private salon behind them. The closest thing to being in the corner, reserved for those who treat fight night as an occasion.",
+  vip_limit:"Limited to 40 · By application only",
+  vipa1_h:"Apron Ringside",vipa1_p:"The first two rows, inside the rail. Close enough to hear the corners work.",
+  vipa2_h:"The Salon",vipa2_p:"A private King&rsquo;s Circle lounge in the palenque, open from doors through the final bell.",
+  vipa3_h:"Cantina Service",vipa3_p:"Dedicated table service all night, poured from our Official Tequila Partner&rsquo;s private reserve.",
+  vipa4_h:"Meet the Card",vipa4_p:"A private moment with the fighters at the weigh-in, and ringside photographs after the main event.",
+  vipa5_h:"The Keepsake",vipa5_p:"Numbered event gloves and the serigraph fight poster, signed, one per seat, never reprinted.",
+  vipa6_h:"Private Entrance",vipa6_p:"Separate arrival, dedicated host, and a concierge line open from the moment you book.",
+  vip_cta:"Apply for the King&rsquo;s Circle",vip_cta2:"All Tickets",
+  vip_incl:"Includes The King's Circle ↓",
   contact_overline:"Inquiries",
   contact_h2:"Step into the room.",
   contact_p:"Partnership, media, and matchmaking inquiries are handled directly. Reach the front office.",
@@ -711,18 +772,6 @@ const cio=new IntersectionObserver(es=>{es.forEach(e=>{
   requestAnimationFrame(step);
 })},{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
-// countdown to July 4 announcement (León, GTO time)
-const cdTarget=new Date('2026-07-04T00:00:00-06:00').getTime();
-const cdEls={d:document.getElementById('cd-d'),h:document.getElementById('cd-h'),m:document.getElementById('cd-m'),s:document.getElementById('cd-s')};
-function cdTick(){
-  const diff=cdTarget-Date.now();
-  if(diff<=0){const c=document.getElementById('cd');if(c){c.outerHTML='<div class="fighter-alias" style="margin-top:26px">'+(T[lang].cd_done||'Announcement live.')+'</div>'}return}
-  const d=Math.floor(diff/864e5),h=Math.floor(diff%864e5/36e5),m=Math.floor(diff%36e5/6e4),s=Math.floor(diff%6e4/1e3);
-  cdEls.d.textContent=String(d).padStart(2,'0');cdEls.h.textContent=String(h).padStart(2,'0');
-  cdEls.m.textContent=String(m).padStart(2,'0');cdEls.s.textContent=String(s).padStart(2,'0');
-  setTimeout(cdTick,1000);
-}
-if(cdEls.d)cdTick();
 // hero countdown to fight night (Sept 26, León)
 const hcdTarget=new Date('2026-09-26T00:00:00-06:00').getTime();
 const hcdEls={d:document.getElementById('hcd-d'),h:document.getElementById('hcd-h'),m:document.getElementById('hcd-m'),s:document.getElementById('hcd-s')};
